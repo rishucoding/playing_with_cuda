@@ -16,7 +16,7 @@ __global__ void print_from_gpu(){
 int main(){
     
     printf("Hello from HOST! \n");
-    print_from_gpu<<<1,1>>>();
+    print_from_gpu<<<1,2>>>(); // here we control the #TBs, and threads_per_block
     cudaDeviceSynchronize();
     return 0;
 }
